@@ -1,5 +1,5 @@
 ###################################################################
-# Algoritmo Gneñetico que encuentra el maximo de la funcion x^2
+# Algoritmo Genetico que encuentra el maximo de la funcion x^2
 # Seleccion por ruleta
 # Pc = 0.92
 # Pm = 0.1

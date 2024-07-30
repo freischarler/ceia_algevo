@@ -1,8 +1,8 @@
 ###################################################################
-# Algoritmo Gneñetico que encuentra el maximo de la funcion x^2
+# Algoritmo Genetico que encuentra el maximo de la funcion c(x,y) = 7.7 + 0.15x + 0.22y − 0.05x**2 − 0.016y**2 − 0.007*x*y
 # Seleccion por ruleta
-# Pc = 0.92
-# Pm = 0.1
+# Pc = 0.85
+# Pm = 0.07
 ###################################################################
 import random
 import matplotlib.pyplot as plt
