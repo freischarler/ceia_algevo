@@ -2,14 +2,14 @@
 # Algoritmo Genetico que encuentra el maximo de la funcion x^2
 # Seleccion por ruleta
 # Pc = 0.92
-# Pm = 0.1
+# Pm = 0.01
 ###################################################################
 import random
 
 # Parámetros
 TAMANIO_POBLACION = 4
 LONGITUD_CROMOSOMA = 5
-TASA_MUTACION = 0.1
+TASA_MUTACION = 0.01
 TASA_CRUCE = 0.92
 GENERACIONES = 10
 
