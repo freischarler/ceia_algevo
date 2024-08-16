@@ -24,6 +24,7 @@ c1 = c2 = 1.4944 # coeficientes de aceleracion
 w = 0.6  # Factor de inercia
 
 def pso_optimization_with_constraints(constraints):
+    # inicialización de particulas
     x = np.zeros((n_particles, n_dimensions))  # matriz para las posiciones de las particulas
     v = np.zeros((n_particles, n_dimensions))  # matriz para las velocidades de las particulas
     pbest = np.zeros((n_particles, n_dimensions))  # matriz para los mejores valores personales
@@ -43,7 +44,7 @@ def pso_optimization_with_constraints(constraints):
         if fit > pbest_fit[i]:  # si la aptitud es mejor que la mejor conocida
             pbest_fit[i] = fit  # se actualiza el mejor valor personal
             
-    # Optimización
+            
     for _ in range(max_iterations):
         for i in range(n_particles):
             fit = f(x[i])
@@ -54,7 +55,6 @@ def pso_optimization_with_constraints(constraints):
                     gbest_fit = fit
                     gbest = x[i].copy()
 
-            # Actualización de la velocidad y posición de la partícula
             v[i] = w * v[i] + c1 * np.random.rand() * (pbest[i] - x[i]) + c2 * np.random.rand() * (gbest - x[i])
             x[i] += v[i]
 
@@ -63,11 +63,8 @@ def pso_optimization_with_constraints(constraints):
                 x[i] = pbest[i].copy()
     return gbest, gbest_fit
 
-
-# Llamada a la función de optimización
 constraints = [g1, g2]
 gbest, gbest_fit = pso_optimization_with_constraints(constraints)
 
-# Se imprime la mejor solucion encontrada y también su valor optimo
 print(f"Mejor solucion: [{gbest[0]:.4f}, {gbest[1]:.4f}, {gbest[2]:.4f}, {gbest[3]:.4f}]")
 print(f"Valor optimo: {gbest_fit}")
